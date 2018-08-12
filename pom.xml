@@ -81,6 +81,9 @@
       <plugin>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-maven-plugin</artifactId>
+        <configuration>
+          <jvmArguments>-Dorg.apache.jackrabbit.core.cluster.node_id=bootifulnode</jvmArguments>
+        </configuration>
       </plugin>
     </plugins>
   </build>
