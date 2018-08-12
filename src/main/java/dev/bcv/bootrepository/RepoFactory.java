@@ -8,8 +8,8 @@ public class RepoFactory {
     private static final String repoConfig = "/dev/bcv/bootrepository/repository-mysql.xml";
 
     public static BootRepository getHippoEnterpriseRepository() throws RepositoryException {
-        final File tmpdir = new File(System.getProperty("user.dir"));
-        final File storage = new File(tmpdir, System.getProperty("repo.path", "storage"));
+        final File currentDir = new File(System.getProperty("user.dir"));
+        final File storage = new File(currentDir, System.getProperty("repo.path", "storage"));
         if (!storage.exists()) {
             storage.mkdir();
         }

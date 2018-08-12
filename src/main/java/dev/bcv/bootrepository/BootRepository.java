@@ -14,7 +14,6 @@ public class BootRepository extends HippoEnterpriseRepository {
     }
 
     public RepositoryConfig createRepositoryConfig() throws RepositoryException {
-        final RepositoryConfig config = super.createRepositoryConfig();
-        return config;
+        return super.createRepositoryConfig();
     }
 }

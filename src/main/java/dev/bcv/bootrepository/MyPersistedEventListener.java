@@ -46,7 +46,7 @@ public class MyPersistedEventListener implements PersistedHippoEventListener {
     }
 
     @PreDestroy
-    public void destroy() throws Exception {
+    public void destroy() {
         HippoServiceRegistry.unregisterService(this, PersistedHippoEventsService.class);
     }
 }
