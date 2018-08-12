@@ -82,7 +82,7 @@
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-maven-plugin</artifactId>
         <configuration>
-          <jvmArguments>-Dorg.apache.jackrabbit.core.cluster.node_id=bootifulnode</jvmArguments>
+          <jvmArguments>-Dorg.apache.jackrabbit.core.cluster.node_id=bootifulnode -Drepo.path=storage</jvmArguments>
         </configuration>
       </plugin>
     </plugins>
