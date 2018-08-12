@@ -9,7 +9,7 @@ public class RepoFactory {
 
     public static BootRepository getHippoEnterpriseRepository() throws RepositoryException {
         final File tmpdir = new File(System.getProperty("user.dir"));
-        final File storage = new File(tmpdir, "storage");
+        final File storage = new File(tmpdir, System.getProperty("repo.path", "storage"));
         if (!storage.exists()) {
             storage.mkdir();
         }
