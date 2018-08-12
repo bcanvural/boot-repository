@@ -14,7 +14,7 @@ public class BootRepositoryApplication {
 
     @Bean
     public Session getSession(BootRepository repository) throws RepositoryException {
-        return repository.login();
+        return repository.login("admin", "admin".toCharArray());
     }
 
     @Bean
@@ -25,5 +25,4 @@ public class BootRepositoryApplication {
     public static void main(String[] args) {
         SpringApplication.run(BootRepositoryApplication.class, args);
     }
-
 }

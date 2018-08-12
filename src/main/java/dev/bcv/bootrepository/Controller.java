@@ -2,7 +2,7 @@ package dev.bcv.bootrepository;
 
 import java.util.ArrayList;
 
-import javax.annotation.PostConstruct;
+import javax.jcr.Node;
 import javax.jcr.NodeIterator;
 import javax.jcr.RepositoryException;
 import javax.jcr.Session;
@@ -29,6 +29,21 @@ public class Controller {
             children.add(nodes.nextNode().getPath());
         }
         return children.toString();
+    }
+
+    @GetMapping("/create")
+    public String create(@QueryParam("q") String q) throws RepositoryException {
+        session.getRootNode().addNode(q, "nt:unstructured");
+        session.save();
+        return session.getRootNode().getNode(q).getPath();
+    }
+
+    @GetMapping("/delete")
+    public String delete(@QueryParam("q") String q) throws RepositoryException {
+        Node node = session.getRootNode().getNode(q);
+        node.remove();
+        session.save();
+        return children("");
     }
 
 }

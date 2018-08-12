@@ -1,16 +1,15 @@
 package dev.bcv.bootrepository;
 
 import java.io.File;
-import java.util.UUID;
 
 import javax.jcr.RepositoryException;
 
 public class RepoFactory {
-    private static final String repoConfig = "/dev/bcv/bootrepository/repository.xml";
+    private static final String repoConfig = "/dev/bcv/bootrepository/repository-mysql.xml";
 
     public static BootRepository getHippoEnterpriseRepository() throws RepositoryException {
         final File tmpdir = new File(System.getProperty("java.io.tmpdir"));
-        final File storage = new File(tmpdir, "repository-" + UUID.randomUUID().toString());
+        final File storage = new File(tmpdir, "storage");
         if (!storage.exists()) {
             storage.mkdir();
         }
